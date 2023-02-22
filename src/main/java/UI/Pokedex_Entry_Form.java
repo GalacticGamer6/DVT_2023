@@ -1,11 +1,11 @@
 
 package UI;
 
+import Backend.Validate;
+
 public class Pokedex_Entry_Form extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Pokedex
-     */
+
     public Pokedex_Entry_Form() {
         initComponents();
     }
@@ -21,9 +21,11 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        species_name_text_field = new javax.swing.JTextField();
+        species_height_text_field = new javax.swing.JTextField();
+        species_weight_text_field = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        species_name_error_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -32,6 +34,32 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
+        species_name_text_field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                species_name_text_fieldActionPerformed(evt);
+            }
+        });
+        species_name_text_field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                species_name_text_fieldKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                species_name_text_fieldKeyReleased(evt);
+            }
+        });
+
+        species_height_text_field.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                species_height_text_fieldKeyPressed(evt);
+            }
+        });
+
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("New Pokemon Name");
+
+        species_name_error_label.setForeground(new java.awt.Color(102, 102, 102));
+        species_name_error_label.setText("------------------------------------------");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -39,21 +67,29 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(706, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(species_name_text_field, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(species_name_error_label, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(species_weight_text_field, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(species_height_text_field, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(423, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(365, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(species_name_text_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(species_name_error_label))
+                .addGap(30, 30, 30)
+                .addComponent(species_height_text_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(species_weight_text_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(234, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -86,6 +122,23 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void species_height_text_fieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_species_height_text_fieldKeyPressed
+        
+    }//GEN-LAST:event_species_height_text_fieldKeyPressed
+
+    private void species_name_text_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_species_name_text_fieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_species_name_text_fieldActionPerformed
+
+    private void species_name_text_fieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_species_name_text_fieldKeyPressed
+
+    }//GEN-LAST:event_species_name_text_fieldKeyPressed
+
+    private void species_name_text_fieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_species_name_text_fieldKeyReleased
+        String species_name = species_name_text_field.getText();
+        Validate.validateSpeciesName(species_name, species_name_error_label);
+    }//GEN-LAST:event_species_name_text_fieldKeyReleased
 
     /**
      * @param args the command line arguments
@@ -124,10 +177,12 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField species_height_text_field;
+    private javax.swing.JLabel species_name_error_label;
+    private javax.swing.JTextField species_name_text_field;
+    private javax.swing.JTextField species_weight_text_field;
     // End of variables declaration//GEN-END:variables
 }
