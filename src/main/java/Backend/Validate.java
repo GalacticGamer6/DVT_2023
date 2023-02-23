@@ -31,6 +31,12 @@ public class Validate {
             }
               
         }
+
+        //name box must be filled in, so species name cannot be blank
+        if(species_name.equals(null)){
+            error_label.setText("please enter a name");
+            return false;
+        }        
         
         //name must be at least 5 characters long and less than 20 characters long.
         if(species_name.length() < 5 | species_name.length() > 20){
@@ -38,14 +44,17 @@ public class Validate {
             return false;
         }
         
-        //name box must be filled in, so species name cannot be blank
-        if(species_name.equals(null)){
-            error_label.setText("please enter a name");
-            return false;
-        }
+
         
         //otherise we return true;
+        error_label.setText("");
         return true;
+    }
+    
+    public boolean checkSpeciesWeight(){
+        
+        
+        
     }
     
 }
