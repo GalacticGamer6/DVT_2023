@@ -2,7 +2,7 @@ package Backend;
 
 import javax.swing.JLabel;
 
-public class Validate {
+public class Validator {
     
     //uses length, presence and format check
     public static boolean validateSpeciesName(String species_name, JLabel error_label){
@@ -51,10 +51,5 @@ public class Validate {
         return true;
     }
     
-    public boolean checkSpeciesWeight(){
-        
-        
-        
-    }
     
 }
