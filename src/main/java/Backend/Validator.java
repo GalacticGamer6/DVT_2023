@@ -1,5 +1,6 @@
 package Backend;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 
 public class Validator {
@@ -48,6 +49,19 @@ public class Validator {
         
         //otherise we return true;
         error_label.setText("");
+        return true;
+    }
+    
+    //checks if a gender has been selected
+    
+    public static boolean validateGender(ButtonGroup b,JLabel gender_error_label){
+        
+        if(b.getSelection() == null){
+            gender_error_label.setText("PLEASE SELECT A GENDER");
+            return false;
+        }
+        
+        gender_error_label.setText("");
         return true;
     }
     

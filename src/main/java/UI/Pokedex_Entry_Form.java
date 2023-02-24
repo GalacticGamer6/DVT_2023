@@ -30,7 +30,7 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        pokemon_gender_button_group = new javax.swing.ButtonGroup();
         jLabel8 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -57,6 +57,7 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         jSpinner1 = new javax.swing.JSpinner();
+        jLabel2 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         type_combo_box = new javax.swing.JComboBox<>();
         male_radio_button = new javax.swing.JRadioButton();
@@ -64,6 +65,7 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
         can_evolve_checkbox = new javax.swing.JCheckBox();
         register_pokemon_button = new javax.swing.JButton();
         species_name_error_label = new javax.swing.JLabel();
+        gender_error_label = new javax.swing.JLabel();
 
         jLabel8.setText("jLabel8");
 
@@ -293,20 +295,28 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
 
         jSpinner1.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), new java.util.Date(890611800000L), new java.util.Date(), java.util.Calendar.HOUR));
 
+        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("MM/DD/YYYY");
+
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSpinner1)
+                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
@@ -332,12 +342,12 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        buttonGroup1.add(male_radio_button);
+        pokemon_gender_button_group.add(male_radio_button);
         male_radio_button.setFont(new java.awt.Font("Showcard Gothic", 0, 12)); // NOI18N
         male_radio_button.setForeground(new java.awt.Color(255, 255, 255));
         male_radio_button.setText("Male");
 
-        buttonGroup1.add(female_radio_button);
+        pokemon_gender_button_group.add(female_radio_button);
         female_radio_button.setFont(new java.awt.Font("Showcard Gothic", 0, 12)); // NOI18N
         female_radio_button.setForeground(new java.awt.Color(255, 255, 255));
         female_radio_button.setText("female");
@@ -360,6 +370,9 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
         species_name_error_label.setForeground(new java.awt.Color(255, 255, 255));
         species_name_error_label.setText("-");
 
+        gender_error_label.setBackground(new java.awt.Color(255, 255, 255));
+        gender_error_label.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -375,7 +388,9 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(male_radio_button)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(female_radio_button))
+                        .addComponent(female_radio_button)
+                        .addGap(18, 18, 18)
+                        .addComponent(gender_error_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(can_evolve_checkbox, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(species_name_error_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -417,13 +432,14 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                .addGap(41, 41, 41)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(male_radio_button)
-                    .addComponent(female_radio_button))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(female_radio_button)
+                    .addComponent(gender_error_label))
+                .addGap(18, 18, 18)
                 .addComponent(can_evolve_checkbox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(register_pokemon_button, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(80, 80, 80))
         );
@@ -449,7 +465,7 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -475,16 +491,21 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
     }//GEN-LAST:event_species_name_text_fieldKeyReleased
 
     private void register_pokemon_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_register_pokemon_buttonActionPerformed
-//        //check wheteher species name and date are valid, then we can save data
-//        if(Validator.validateSpeciesName(species_name_text_field.getText(),species_name_error_label) & ){
-//            
-//            JOptionPane.showMessageDialog(rootPane, "POKEMON SUCCESSFULLY ENTERED");
-//        }
-//        else if(!Validator.validateSpeciesName(species_name_text_field.getText(),species_name_error_label)){
-//            
-//            JOptionPane.showMessageDialog(rootPane, "PLEASE ENTER A VALID SPECIES NAME");
-//            
-//        }
+        //check wheteher species name and gender are valid, then we can save data
+        if(Validator.validateSpeciesName(species_name_text_field.getText(),species_name_error_label) & Validator.validateGender(pokemon_gender_button_group, gender_error_label)){
+            
+            JOptionPane.showMessageDialog(rootPane, "POKEMON SUCCESSFULLY ENTERED");
+        }
+        else if(!Validator.validateSpeciesName(species_name_text_field.getText(),species_name_error_label)){
+            
+            JOptionPane.showMessageDialog(rootPane, "PLEASE ENTER A VALID SPECIES NAME");
+            
+        }
+        else if(!Validator.validateGender(pokemon_gender_button_group, gender_error_label)){
+            
+            JOptionPane.showMessageDialog(rootPane, "PLEASE SELECT THE GENDER");
+            
+        }
     }//GEN-LAST:event_register_pokemon_buttonActionPerformed
 
     /**
@@ -523,13 +544,14 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox can_evolve_checkbox;
     private javax.swing.JRadioButton female_radio_button;
+    private javax.swing.JLabel gender_error_label;
     private javax.swing.JSpinner height_feet_spinner;
     private javax.swing.JSpinner height_inches_spinner;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -559,6 +581,7 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JRadioButton male_radio_button;
+    private javax.swing.ButtonGroup pokemon_gender_button_group;
     private javax.swing.JButton register_pokemon_button;
     private javax.swing.JLabel species_name_error_label;
     private javax.swing.JTextField species_name_text_field;
