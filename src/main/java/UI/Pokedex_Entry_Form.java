@@ -262,7 +262,7 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
 
         jPanel19.setBackground(new java.awt.Color(204, 204, 204));
 
-        weight_spinner.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        weight_spinner.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.5d));
         ((DefaultEditor) weight_spinner.getEditor()).getTextField().setEditable(false);
         weight_spinner.setFocusable(false);
 
@@ -560,13 +560,6 @@ public class Pokedex_Entry_Form extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;

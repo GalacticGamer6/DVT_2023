@@ -543,7 +543,7 @@
                     <Component class="javax.swing.JSpinner" name="weight_spinner">
                       <Properties>
                         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor" postCode="((DefaultEditor) weight_spinner.getEditor()).getTextField().setEditable(false);">
-                          <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                          <SpinnerModel initial="0.0" minimum="0.0" numberType="java.lang.Double" stepSize="0.5" type="number"/>
                         </Property>
                         <Property name="focusable" type="boolean" value="false"/>
                       </Properties>
